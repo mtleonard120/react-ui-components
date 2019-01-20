@@ -4,27 +4,23 @@ import React from 'react'
 import {s} from '../../utils'
 
 // Styles
-import styles from './Button.module.scss'
+import styles from './ButtonGroup.module.scss'
 
 // Types
-type ButtonContext = 'primary' | 'secondary' | 'danger'
+type JustifyType = 'start' | 'end' | 'between' | 'around' | 'even'
+type DirectionType = 'row' | 'column'
 
 interface IButtonGroupProps {
-    children: JSX.Element | string
-    onClick?: () => void
-    context: ButtonContext
+    children: JSX.Element[]
     className?: string
-    title?: string
+    direction?: DirectionType
+    justify?: JustifyType
 }
 
 // Primary Component
 export const ButtonGroup = (props: IButtonGroupProps) => {
-    const {children, className, context, ...rest} = props
-    const classList = s(styles[context], className)
+    const {children, className, direction = 'row', justify = 'start'} = props
+    const classList = s(styles[justify], styles[direction], styles.group, className)
 
-    return (
-        <button className={classList} {...rest}>
-            {children}
-        </button>
-    )
+    return <div className={classList}>{children}</div>
 }

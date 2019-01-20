@@ -1,0 +1,82 @@
+// Should be used to establish all colors and fonts vis scss variables/mixins
+// Current values are purely for example and should be updated for each new app
+
+// Brand colors
+$primary: #18453b;
+$secondary: #0db14b;
+$accent: #909ab7;
+$danger: red;
+$text: black;
+$link: $primary;
+
+// Hover colors
+$darken-pct: 10%;
+$primary-hover: darken($primary, $darken-pct);
+$secondary-hover: darken($secondary, $darken-pct);
+$accent-hover: darken($accent, $darken-pct);
+$danger-hover: darken($danger, $darken-pct);
+$link-hover: darken($link, $darken-pct);
+
+// Colors for text within colored areas
+$within-primary: white;
+$within-secondary: black;
+$within-accent: black;
+$within-danger: white;
+
+// Color stacks
+$primary-stack: $primary, $within-primary, $primary-hover;
+$secondary-stack: $secondary, $within-secondary, $secondary-hover;
+$danger-stack: $danger, $within-danger, $danger-hover;
+
+@mixin color-section($col-stack) {
+    background: nth($col-stack, 1);
+    color: nth($col-stack, 2);
+
+    &:hover {
+        background: nth($col-stack, 3);
+    }
+}
+
+@mixin primary-color-section {
+    @include color-section($primary-stack);
+}
+
+@mixin secondary-color-section {
+    @include color-section($secondary-stack);
+}
+
+@mixin danger-color-section {
+    @include color-section($danger-stack);
+}
+
+// Fonts
+$h1: x-large;
+$h2: large;
+$body: medium;
+$label: small;
+$font-stack: Arial, Helvetica, sans-serif;
+
+@mixin font($color, $size, $family: $font-stack) {
+    color: $color;
+    font: {
+        size: $size;
+        family: $family;
+    }
+}
+
+// Base fonts
+@mixin heading1 {
+    @include font($primary, $h1);
+}
+
+@mixin heading2 {
+    @include font($secondary, $h2);
+}
+
+@mixin body {
+    @include font($text, $body);
+}
+
+@mixin label {
+    @include font($text, $label);
+}

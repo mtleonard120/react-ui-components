@@ -1,35 +1,47 @@
-@import 'src/styleguide.scss';
+@import 'src/_styleguide.scss';
 
-$padding: 10px;
+//***************
+// Variables
+//***************
+$padding: (10/16) * 1em; // Set padding relative to the font size in the button
 
-%button {
-    @include body();
+//***************
+// Base Style
+//***************
+.button {
+    @include body;
 
     border: none;
-    padding: $padding $padding * 2;
-    border-radius: $padding + $body/2;
+    padding: $padding 2 * $padding;
     cursor: pointer;
 }
 
-@mixin button($col, $back, $hov) {
-    @extend %button !optional;
+//***************
+// Prop Styles
+//***************
 
-    background: $back;
-    color: $col;
-
-    &:hover {
-        background: $hov;
-    }
-}
-
+// Prop: context
 .primary {
-    @include button($withinPrimary, $primary, $primaryHover);
+    @include primary-color-section;
 }
 
 .secondary {
-    @include button($withinSecondary, $secondary, $secondaryHover);
+    @include secondary-color-section;
 }
 
 .danger {
-    @include button($withinDanger, $danger, $dangerHover);
+    @include danger-color-section;
+}
+
+// Prop: appearance
+.round {
+    border-radius: $padding + 1em;
+}
+
+.square {
+    border-radius: 0;
+}
+
+.oval {
+    border-radius: 50%;
 }
