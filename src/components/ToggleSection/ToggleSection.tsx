@@ -59,6 +59,10 @@ interface IToggleSectionState {
  * ```
  */
 export class ToggleSection extends React.Component<IToggleSectionProps, IToggleSectionState> {
+    static getDervivedStateFromProps = (newProps: IToggleSectionProps) => {
+        return {isOpen: newProps.isOpen}
+    }
+
     constructor(props: IToggleSectionProps) {
         super(props)
         this.state = {
