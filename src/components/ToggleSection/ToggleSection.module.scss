@@ -1,0 +1,36 @@
+@import 'src/_styleguide.scss';
+
+//***************
+// Variables
+//***************
+$padding: 1rem;
+
+//***************
+// Base Style
+//***************
+// .container {
+//     border: 1px solid $bordercolor;
+// }
+
+.header {
+    @include primary-color-section();
+    border: 1px solid $bordercolor;
+    padding: $padding * 0.5 $padding;
+    cursor: pointer;
+
+    &.disabled {
+        opacity: 0.5;
+        pointer-events: none;
+        cursor: auto;
+    }
+}
+
+.icon {
+    float: right;
+}
+
+.content {
+    border: 1px solid $bordercolor;
+    border-top: none;
+    padding: $padding;
+}

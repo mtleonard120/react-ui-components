@@ -1,1 +1,1 @@
-export * from './styleList'
+export * from './concatStyles'
