@@ -23,28 +23,6 @@
         "mainFile": "src/_styleguide.scss",
         "origin": "AUTHORED"
     },
-    "mtleonard120.react-ui-components/components/button-group@1.0.1": {
-        "files": [
-            {
-                "relativePath": "src/components/ButtonGroup/ButtonGroup.module.scss",
-                "test": false,
-                "name": "ButtonGroup.module.scss"
-            },
-            {
-                "relativePath": "src/components/ButtonGroup/ButtonGroup.tsx",
-                "test": false,
-                "name": "ButtonGroup.tsx"
-            },
-            {
-                "relativePath": "src/components/ButtonGroup/index.ts",
-                "test": false,
-                "name": "index.ts"
-            }
-        ],
-        "mainFile": "src/components/ButtonGroup/index.ts",
-        "trackDir": "src/components/ButtonGroup",
-        "origin": "AUTHORED"
-    },
     "mtleonard120.react-ui-components/utils/style-list@1.0.1": {
         "files": [
             {
@@ -67,7 +45,7 @@
         "trackDir": "src/utils/styleList",
         "origin": "AUTHORED"
     },
-    "mtleonard120.react-ui-components/components/button@1.0.6": {
+    "mtleonard120.react-ui-components/components/button@1.0.7": {
         "files": [
             {
                 "relativePath": "src/components/Button/Button.module.scss",
@@ -89,7 +67,7 @@
         "trackDir": "src/components/Button",
         "origin": "AUTHORED"
     },
-    "mtleonard120.react-ui-components/components/index@1.0.6": {
+    "mtleonard120.react-ui-components/components/index@1.0.7": {
         "files": [
             {
                 "relativePath": "src/components/index.ts",
@@ -98,6 +76,28 @@
             }
         ],
         "mainFile": "src/components/index.ts",
+        "origin": "AUTHORED"
+    },
+    "mtleonard120.react-ui-components/components/button-group@1.0.3": {
+        "files": [
+            {
+                "relativePath": "src/components/ButtonGroup/ButtonGroup.module.scss",
+                "test": false,
+                "name": "ButtonGroup.module.scss"
+            },
+            {
+                "relativePath": "src/components/ButtonGroup/ButtonGroup.tsx",
+                "test": false,
+                "name": "ButtonGroup.tsx"
+            },
+            {
+                "relativePath": "src/components/ButtonGroup/index.ts",
+                "test": false,
+                "name": "index.ts"
+            }
+        ],
+        "mainFile": "src/components/ButtonGroup/index.ts",
+        "trackDir": "src/components/ButtonGroup",
         "origin": "AUTHORED"
     },
     "version": "13.0.4"
