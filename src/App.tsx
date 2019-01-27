@@ -8,9 +8,9 @@ export class App extends React.Component {
     public render() {
         return (
             <ButtonGroup justify='start' direction='column'>
-                <Button context='primary' title='thing' children='Test' />
-                <Button context='secondary' title='thing1' children='Test1' />
-                <Button context='danger' title='thing2' children='Test2' />
+                <Button role='primary' title='thing' children='Test' />
+                <Button role='secondary' title='thing1' children='Test1' />
+                <Button role='danger' title='thing2' children='Test2' />
             </ButtonGroup>
         )
     }
