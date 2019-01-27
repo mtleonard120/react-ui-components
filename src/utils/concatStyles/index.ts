@@ -1,1 +1,1 @@
-export {s} from './concatStyles'
+export {concatStyles} from './concatStyles'

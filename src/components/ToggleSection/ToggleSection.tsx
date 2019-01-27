@@ -5,7 +5,7 @@ import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
 import {faAngleUp, faAngleDown} from '@fortawesome/free-solid-svg-icons'
 
 // Utils
-import {s} from '../../utils'
+import {concatStyles as s} from '../../utils'
 
 // Styles
 import styles from './ToggleSection.module.scss'
