@@ -22,6 +22,7 @@ interface IToggleSectionProps {
     headerContent: JSX.Element | string
     iconClassName?: string
     isOpen?: boolean
+    onToggle?: () => void
 }
 
 interface IToggleSectionState {
@@ -49,7 +50,7 @@ interface IToggleSectionState {
  *  | headerContent     | _JSX.Element_ or _string_ | Content to display in clickable header 	    |
  *  | iconClassName?    | _string_                  | Additional class to apply to icon  	        |
  *  | isOpen?     	    | _boolean_                 | Indicates if toggle section is open 	        |
- *
+ *  | onToggle?     	| () => _void_              | Function to call on toggle     	            |
  * ## Example
  *
  * ```jsx
@@ -59,8 +60,12 @@ interface IToggleSectionState {
  * ```
  */
 export class ToggleSection extends React.Component<IToggleSectionProps, IToggleSectionState> {
-    static getDervivedStateFromProps = (newProps: IToggleSectionProps) => {
-        return {isOpen: newProps.isOpen}
+    static getDerivedStateFromProps = (newProps: IToggleSectionProps) => {
+        if (!newProps.onToggle) {
+            return null
+        } else {
+            return {isOpen: newProps.isOpen}
+        }
     }
 
     constructor(props: IToggleSectionProps) {
@@ -72,7 +77,12 @@ export class ToggleSection extends React.Component<IToggleSectionProps, IToggleS
 
     // Event Handlers
     public toggle = () => {
-        this.setState((oldState: IToggleSectionState) => ({isOpen: !oldState.isOpen}))
+        this.setState((oldState: IToggleSectionState) => {
+            if (this.props.onToggle) {
+                this.props.onToggle()
+            }
+            return {isOpen: !oldState.isOpen}
+        })
     }
 
     // Lifecycle Methods
