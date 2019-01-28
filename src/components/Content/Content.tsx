@@ -7,14 +7,10 @@ import {concatStyles as s} from '../../utils'
 import styles from './Content.module.scss'
 
 // Types
-type JustifyType = 'start' | 'end' | 'between' | 'around' | 'even'
-type DirectionType = 'row' | 'column'
 
 interface IContentProps {
     children: JSX.Element[]
     className?: string
-    direction?: DirectionType
-    justify?: JustifyType
 }
 
 // Documentation

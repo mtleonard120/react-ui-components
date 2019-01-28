@@ -30,8 +30,7 @@ interface IAccordionState {
 /**
  * ## Accordion
  *
- * A container component for a group of several <ToggleSection>s. Only allows one ToggleSection
- * to be open at a time
+ * A container component for a group of several <ToggleSection>s.
  *
  * ## Props
  *

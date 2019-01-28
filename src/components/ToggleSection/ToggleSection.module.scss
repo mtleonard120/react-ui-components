@@ -8,9 +8,9 @@ $padding: 1rem;
 //***************
 // Base Style
 //***************
-// .container {
-//     border: 1px solid $bordercolor;
-// }
+.container {
+    width: 100%;
+}
 
 .header {
     @include primary-color-section();
