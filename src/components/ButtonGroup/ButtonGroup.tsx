@@ -17,7 +17,7 @@ interface IButtonGroupProps {
     justify?: JustifyType
 }
 
-// Bitsrc Documentation
+// Documentation
 /**
  * # ButtonGroup
  *
