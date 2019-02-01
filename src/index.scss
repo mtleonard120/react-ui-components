@@ -1,4 +1,9 @@
-@import 'src/styleguide.scss';
+@import 'src/_styleguide.scss';
+
+@font-face {
+    font-family: 'IcoMoon';
+    src: local('IcoMoon-Free'), url(./fonts/IcoMoon-Free.ttf) format('ttf');
+}
 
 body {
     @include body();
@@ -8,8 +13,4 @@ body {
         'Droid Sans', 'Helvetica Neue', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

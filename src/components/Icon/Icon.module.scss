@@ -1,0 +1,165 @@
+@import 'src/_styleguide.scss';
+
+@mixin icon($code) {
+    display: flex;
+    &:after {
+        font-family: Icons;
+        content: $code;
+    }
+}
+
+.small {
+    font-size: 16px;
+}
+
+.medium {
+    font-size: 24px;
+}
+
+.large {
+    font-size: 32px;
+}
+
+.xl {
+    font-size: 48px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add {
+    @include icon('\E90A');
+}
+.bell {
+    @include icon('\E92B');
+}
+.bold {
+    @include icon('\E903');
+}
+.cancel {
+    @include icon('\E5CD');
+}
+.clock {
+    @include icon('\E92A');
+}
+.code {
+    @include icon('\E906');
+}
+.contentAsset {
+    @include icon('\E902');
+}
+.contentSlot {
+    @include icon('\E901');
+}
+.delete {
+    @include icon('\E920');
+}
+.desktop {
+    @include icon('\E90E');
+}
+.downLarge {
+    @include icon('\E927');
+}
+.download {
+    @include icon('\E910');
+}
+.dropdown {
+    @include icon('\E5C5');
+}
+.edit {
+    @include icon('\E90D');
+}
+.error {
+    @include icon('\E001');
+}
+.eye {
+    @include icon('\E91A');
+}
+.hamburger {
+    @include icon('\E5D2');
+}
+.home {
+    @include icon('\E88A');
+}
+.import {
+    @include icon('\E910');
+}
+.info {
+    @include icon('\E88F');
+}
+.italic {
+    @include icon('\E911');
+}
+.link {
+    @include icon('\E913');
+}
+.media {
+    @include icon('\E916');
+}
+.mobile {
+    @include icon('\E917');
+}
+.module {
+    @include icon('\E918');
+}
+.ordered {
+    @include icon('\E904');
+}
+.refresh {
+    @include icon('\E92C');
+}
+.reset {
+    @include icon('\E92F');
+}
+.review {
+    @include icon('\E91D');
+}
+.scheduledAsset {
+    @include icon('\E901');
+}
+.search {
+    @include icon('\E91E');
+}
+.settings {
+    @include icon('\E91F');
+}
+.subscript {
+    @include icon('\E932');
+}
+.success {
+    @include icon('\E5CA');
+}
+.superscript {
+    @include icon('\E933');
+}
+.textAlignDropdown {
+    @include icon('\E900');
+}
+.underline {
+    @include icon('\E930');
+}
+.undo {
+    @include icon('\E91C');
+}
+.unordered {
+    @include icon('\E919');
+}
+.upLarge {
+    @include icon('\E928');
+}
+.users {
+    @include icon('\E929');
+}
+.arrowUp {
+    @include icon('\E5CE');
+}
+.arrowDown {
+    @include icon('\E5CF');
+}

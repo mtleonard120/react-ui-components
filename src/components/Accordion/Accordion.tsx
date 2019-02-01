@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import {ToggleSection} from '..'
+import {TogglePanel} from '..'
 
 // Utils
 import {concatStyles as s} from '../../utils'
@@ -30,15 +30,15 @@ interface IAccordionState {
 /**
  * ## Accordion
  *
- * A container component for a group of several <ToggleSection>s.
+ * A container component for a group of several <TogglePanels>s.
  *
  * ## Props
  *
- *  | **Prop**   	    | **Type**                             	        | **Description**                      	    |
- *  |-------------------|-----------------------------------------------|-------------------------------------------|
- *  | className? 	    | _string_                             	        | Additional class to apply to group  	    |
- *  | singleSlotAllowed | _boolean_           	                        | Only allow one slot open at a time?       |
- *  | slots   	        | _ISlot[]_           	                        | Elements to display in group 	            |
+ *  | **Prop**   	    | **Type**   | **Description**                      	 |
+ *  |-------------------|------------|-------------------------------------------|
+ *  | className? 	    | _string_   | Additional class to apply to group  	     |
+ *  | singleSlotAllowed | _boolean_  | Only allow one slot open at a time?       |
+ *  | slots   	        | _ISlot[]_  | Elements to display in group 	         |
  *
  * ## Example
  *
@@ -81,14 +81,14 @@ export class Accordion extends React.Component<IAccordionProps, IAccordionState>
             <div className={s(styles.accordion, className)}>
                 {slots.map((slot: ISlot, i: number) => {
                     return (
-                        <ToggleSection
+                        <TogglePanel
                             headerContent={slot.headerContent}
                             isOpen={this.state.openIndices.includes(i)}
                             onToggle={() => this.onSlotOpen(i)}
                             key={i}
                         >
                             {slot.bodyContent}
-                        </ToggleSection>
+                        </TogglePanel>
                     )
                 })}
             </div>

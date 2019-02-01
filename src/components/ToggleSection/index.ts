@@ -1,1 +1,1 @@
-export * from './ToggleSection'
+export * from './TogglePanel'
