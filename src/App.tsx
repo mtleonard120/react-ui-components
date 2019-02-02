@@ -1,7 +1,7 @@
-import React, {Children} from 'react'
+import React from 'react'
 
 // Components
-import {Accordion, Button, ButtonGroup, Content, ToggleSection} from './components'
+import {Accordion, Button, ButtonGroup, Content, TogglePanel} from './components'
 
 // Styles
 import styles from './App.module.scss'
@@ -63,9 +63,9 @@ export class App extends React.Component {
                     description='A header line with a toggleable content container. Component maintains local state
                     but can be overridden by passing an updated value for the isOpen prop'
                 >
-                    <ToggleSection headerContent='Details'>This is some hidden content</ToggleSection>
+                    <TogglePanel headingContent='Details'>This is some hidden content</TogglePanel>
                 </Example>
-                <Example name='Accordion' description='A container component for a group of several <ToggleSection>s.'>
+                <Example name='Accordion' description='A container component for a group of several <TogglePanel>s.'>
                     <SubExample label='Single Open Slot Allowed'>
                         <Accordion
                             singleSlotAllowed

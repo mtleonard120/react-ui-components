@@ -4,6 +4,7 @@
 // Variables
 //***************
 $padding: 1rem;
+$halfpad: 0.5 * $padding;
 
 //***************
 // Base Style
@@ -15,8 +16,12 @@ $padding: 1rem;
 .heading {
     @include primary-color-section();
     border: 1px solid $bordercolor;
-    padding: $padding * 0.5 $padding;
+    padding: $halfpad $halfpad $halfpad $padding;
     cursor: pointer;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
     &.disabled {
         opacity: 0.5;
@@ -24,9 +29,7 @@ $padding: 1rem;
         cursor: auto;
     }
 
-    .icon {
-        float: right;
-    }
+    fill: $within-primary;
 }
 
 .content {

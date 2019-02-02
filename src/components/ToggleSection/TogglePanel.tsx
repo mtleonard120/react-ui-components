@@ -5,6 +5,7 @@ import {concatStyles as s} from '../../utils'
 
 // Styles
 import styles from './TogglePanel.module.scss'
+import {Icon} from '../Icon'
 
 // Types
 interface ITogglePanelProps {
@@ -15,8 +16,8 @@ interface ITogglePanelProps {
     customClosedIcon?: JSX.Element
     customOpenIcon?: JSX.Element
     disabled?: boolean
-    headerClassName?: string
-    headerContent: JSX.Element | string
+    headingClassName?: string
+    headingContent: JSX.Element | string
     iconClassName?: string
     isOpen?: boolean
     onToggle?: () => void
@@ -95,22 +96,20 @@ export class TogglePanel extends React.Component<ITogglePanelProps, ITogglePanel
             customOpenIcon,
             disabled,
             iconClassName,
-            headerClassName,
-            headerContent,
+            headingClassName,
+            headingContent,
         } = this.props
 
         // TODO: Add icomoon icons to indicate open/close actions
         return (
             <div className={s(styles.container, className)}>
                 <div
-                    className={s(styles.header, disabled && styles.disabled, headerClassName)}
+                    className={s(styles.heading, disabled && styles.disabled, headingClassName)}
                     onClick={disabled ? undefined : this.toggle}
                 >
-                    {headerContent}
-                    <span className={s(styles.icon, iconClassName)}>
-                        {!isOpen && customClosedIcon}
-                        {isOpen && customOpenIcon}
-                    </span>
+                    <span>{headingContent}</span>
+                    {!isOpen && (customClosedIcon || <Icon iconName='circle-down' size='small' />)}
+                    {isOpen && (customOpenIcon || <Icon iconName='circle-up' size='small' />)}
                 </div>
                 {isOpen && <div className={s(styles.content, contentClassName)}>{children}</div>}
             </div>

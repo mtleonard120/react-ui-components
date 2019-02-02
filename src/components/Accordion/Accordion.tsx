@@ -82,7 +82,7 @@ export class Accordion extends React.Component<IAccordionProps, IAccordionState>
                 {slots.map((slot: ISlot, i: number) => {
                     return (
                         <TogglePanel
-                            headerContent={slot.headerContent}
+                            headingContent={slot.headerContent}
                             isOpen={this.state.openIndices.includes(i)}
                             onToggle={() => this.onSlotOpen(i)}
                             key={i}
