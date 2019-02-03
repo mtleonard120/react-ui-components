@@ -9,7 +9,7 @@ import styles from './Content.module.scss'
 // Types
 
 interface IContentProps {
-    children: JSX.Element[]
+    children: JSX.Element | JSX.Element[]
     className?: string
 }
 
