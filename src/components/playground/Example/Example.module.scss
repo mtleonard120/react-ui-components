@@ -1,0 +1,9 @@
+.example {
+    display: flex;
+    > * {
+        flex: 1;
+    }
+    > *:not(:last-child) {
+        margin-right: 4rem;
+    }
+}

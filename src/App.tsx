@@ -1,20 +1,12 @@
 import React from 'react'
 
 // Components
-import {Accordion, Button, ButtonGroup, Content, TogglePanel} from './components'
+import {Accordion, Button, ButtonGroup, Content, TogglePanel, Example} from './components'
 
 // Styles
 import styles from './App.module.scss'
 
 // Helpers
-const Example = (props: {name: string; description?: string; children: JSX.Element[] | JSX.Element}) => (
-    <section>
-        <h2>{props.name}</h2>
-        <p>{props.description}</p>
-        <div className={styles.example}>{props.children}</div>
-    </section>
-)
-
 const SubExample = (props: {label: string; children: JSX.Element[] | JSX.Element}) => (
     <div className={styles.subexample}>
         <label>{`${props.label}: `}</label>
