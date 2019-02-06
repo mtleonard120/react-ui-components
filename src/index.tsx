@@ -2,6 +2,6 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 import './index.scss'
-import {App} from './App'
+import {Playground} from './components'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(<Playground />, document.getElementById('root'))

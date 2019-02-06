@@ -1,13 +1,5 @@
 import React from 'react'
 
-// Apollo
-
-// Packages
-
-// Components
-
-// Utils
-
 // Styles
 import styles from './Example.module.scss'
 
@@ -17,16 +9,14 @@ interface IExampleProps {
     description: string | undefined
 }
 
-// Helpers
-
 // Primary Component
 export const Example: React.SFC<IExampleProps> = props => {
     const {name, description, children} = props
     return (
-        <section>
-            <h2>{name}</h2>
+        <section className={styles.example}>
+            <h3>{name}</h3>
             <p>{description}</p>
-            <div className={styles.example}>{children}</div>
+            {children}
         </section>
     )
 }

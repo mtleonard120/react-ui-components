@@ -1,84 +1,123 @@
 // Should be used to establish all colors and fonts vis scss variables/mixins
 // Current values are purely for example and should be updated for each new app
 
-// Brand colors
-$primary: #18453b;
-$secondary: #0db14b;
-$accent: #909ab7;
-$danger: red;
-$text: black;
-$link: $primary;
-
-// Hover colors
+// Variant Levels
 $darken-pct: 10%;
-$primary-hover: darken($primary, $darken-pct);
-$secondary-hover: darken($secondary, $darken-pct);
-$accent-hover: darken($accent, $darken-pct);
-$danger-hover: darken($danger, $darken-pct);
-$link-hover: darken($link, $darken-pct);
+$lighten-pct: 10%;
 
-// Colors for text within colored areas
-$within-primary: white;
-$within-secondary: black;
-$within-accent: black;
-$within-danger: white;
+// Brand Colors - Follow Material Design naming conventions: https://material.io/tools/color/
+$primary: #004d40;
+$primary-dark: darken($primary, $darken-pct);
+$primary-light: lighten($primary, $lighten-pct);
 
-$bordercolor: #909ab7;
+$secondary: #90a4ae;
+$secondary-dark: darken($secondary, $darken-pct);
+$secondary-light: lighten($secondary, $lighten-pct);
 
-// Color stacks
-$primary-stack: $primary, $within-primary, $primary-hover;
-$secondary-stack: $secondary, $within-secondary, $secondary-hover;
-$danger-stack: $danger, $within-danger, $danger-hover;
+$accent: #2196f3;
+$accent-dark: darken($accent, $darken-pct);
+$accent-light: lighten($accent, $lighten-pct);
 
-@mixin color-section($col-stack) {
+$danger: #7f0000;
+$danger-dark: darken($danger, $darken-pct);
+$danger-light: lighten($danger, $lighten-pct);
+
+$text-on-primary: white;
+$text-on-secondary: black;
+$text-on-accent: black;
+$text-on-danger: white;
+$text-on-body: black;
+$text-on-link: $primary;
+
+$border-color: #909ab7;
+$background: #f1f1f1;
+$surface: #cfd8dc;
+
+// Color Stacks
+$primary-stack: $primary, $text-on-primary, $primary-dark;
+$secondary-stack: $secondary, $text-on-secondary, $secondary-dark;
+$accent-stack: $accent, $text-on-accent, $accent-dark;
+$danger-stack: $danger, $text-on-danger, $danger-dark;
+
+@mixin color-section($col-stack, $hover) {
     background: nth($col-stack, 1);
     color: nth($col-stack, 2);
 
-    &:hover {
-        background: nth($col-stack, 3);
+    @if $hover == 'true' {
+        &:hover {
+            background: nth($col-stack, 3);
+        }
     }
 }
 
-@mixin primary-color-section {
-    @include color-section($primary-stack);
+@mixin primary-color-section($hover: false) {
+    @include color-section($primary-stack, $hover);
 }
 
-@mixin secondary-color-section {
-    @include color-section($secondary-stack);
+@mixin secondary-color-section($hover: false) {
+    @include color-section($secondary-stack, $hover);
 }
 
-@mixin danger-color-section {
-    @include color-section($danger-stack);
+@mixin accent-color-section($hover: false) {
+    @include color-section($accent-stack, $hover);
+}
+
+@mixin danger-color-section($hover: false) {
+    @include color-section($danger-stack, $hover);
 }
 
 // Fonts
-$h1: x-large;
-$h2: large;
-$body: medium;
-$label: small;
-$font-stack: Arial, Helvetica, sans-serif;
+$font-stack: 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
 
-@mixin font($color, $size, $family: $font-stack) {
-    color: $color;
-    font: {
-        size: $size;
-        family: $family;
-    }
+@mixin common {
+    color: $primary;
+    font-family: $font-stack;
+    font-weight: bolder;
 }
 
 // Base fonts
 @mixin heading1 {
-    @include font($primary, $h1);
+    @include common();
+    font-size: 2rem;
+    margin: 0.67em 0;
 }
 
 @mixin heading2 {
-    @include font($secondary, $h2);
+    @include common();
+    font-size: 1.5rem;
+    margin: 0.75em 0;
+}
+
+@mixin heading3 {
+    @include common();
+    font-size: 1.17rem;
+    margin: 0.83em 0;
+}
+
+@mixin heading4 {
+    @include common();
+    font-size: 1rem;
+    margin: 1rem 0;
+}
+
+@mixin heading5 {
+    @include common();
+    font-size: 0.83rem;
+    margin: 1.5em 0;
+}
+
+@mixin heading6 {
+    @include common();
+    font-size: 0.75rem;
+    margin: 1.67em 0;
 }
 
 @mixin body {
-    @include font($text, $body);
+    font-size: 1rem;
+    font-family: $font-stack;
 }
 
 @mixin label {
-    @include font($text, $label);
+    font-size: 1rem;
+    font-family: $font-stack;
 }

@@ -1,0 +1,13 @@
+@import '../../../_styleguide.scss';
+
+.standard {
+    border-bottom: 2px solid $border-color;
+}
+
+.heavy {
+    border-bottom: 3px solid $border-color;
+}
+
+.light {
+    border-bottom: 1px solid lighten($border-color, 30%);
+}

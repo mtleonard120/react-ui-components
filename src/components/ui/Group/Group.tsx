@@ -4,13 +4,13 @@ import React from 'react'
 import {concatStyles as s} from '../../../utils'
 
 // Styles
-import styles from './ButtonGroup.module.scss'
+import styles from './Group.module.scss'
 
 // Types
 type JustifyType = 'start' | 'end' | 'between' | 'around' | 'even'
 type DirectionType = 'row' | 'column'
 
-interface IButtonGroupProps {
+interface IGroupProps {
     children: JSX.Element[]
     className?: string
     direction?: DirectionType
@@ -19,7 +19,7 @@ interface IButtonGroupProps {
 
 // Documentation
 /**
- * # ButtonGroup
+ * # Group
  *
  * A container component for a group of several elements, typically <Button>s
  *
@@ -35,14 +35,14 @@ interface IButtonGroupProps {
  * ## Example
  *
  * ```jsx
- *  <ButtonGroup justify='start' direction='column'>
+ *  <Group justify='start' direction='column'>
  *      <Button role='primary' title='thing' children='Test' />
  *      <Button role='secondary' title='thing1' children='Test1' />
  *      <Button role='danger' title='thing2' children='Test2' />
- *  </ButtonGroup>
+ *  </Group>
  * ```
  */
-export const ButtonGroup = (props: IButtonGroupProps) => {
+export const Group = (props: IGroupProps) => {
     const {children, className, direction = 'row', justify = 'start'} = props
     const classList = s(styles[justify], styles[direction], styles.group, className)
 

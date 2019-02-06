@@ -15,7 +15,7 @@ $halfpad: 0.5 * $padding;
 
 .heading {
     @include primary-color-section();
-    border: 1px solid $bordercolor;
+    border: 1px solid $border-color;
     padding: $halfpad $halfpad $halfpad $padding;
     cursor: pointer;
 
@@ -29,11 +29,13 @@ $halfpad: 0.5 * $padding;
         cursor: auto;
     }
 
-    fill: $within-primary;
+    fill: $text-on-primary;
 }
 
 .content {
-    border: 1px solid $bordercolor;
+    border: 1px solid $border-color;
     border-top: none;
+
+    background: $surface;
     padding: $padding;
 }
