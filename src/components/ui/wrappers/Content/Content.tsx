@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Utils
-import {concatStyles as s} from '../../../utils'
+import {concatStyles as s} from '../../../../utils'
 
 // Styles
 import styles from './Content.module.scss'

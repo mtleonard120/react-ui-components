@@ -4,7 +4,7 @@ import React from 'react'
 import {TogglePanel} from '..'
 
 // Utils
-import {concatStyles as s} from '../../../utils'
+import {concatStyles as s} from '../../../../utils'
 
 // Styles
 import styles from './Accordion.module.scss'
@@ -13,7 +13,6 @@ import styles from './Accordion.module.scss'
 interface ISlot {
     headerContent: JSX.Element | string
     bodyContent: JSX.Element | string
-    dependentOnIndex?: number
 }
 
 interface IAccordionProps {
@@ -82,10 +81,10 @@ export class Accordion extends React.Component<IAccordionProps, IAccordionState>
                 {slots.map((slot: ISlot, i: number) => {
                     return (
                         <TogglePanel
+                            key={i}
                             headingContent={slot.headerContent}
                             isOpen={this.state.openIndices.includes(i)}
-                            onToggle={() => this.onSlotOpen(i)}
-                            key={i}
+                            onClick={() => this.onSlotOpen(i)}
                         >
                             {slot.bodyContent}
                         </TogglePanel>

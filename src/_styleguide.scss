@@ -43,7 +43,7 @@ $danger-stack: $danger, $text-on-danger, $danger-dark;
     background: nth($col-stack, 1);
     color: nth($col-stack, 2);
 
-    @if $hover == 'true' {
+    @if $hover {
         &:hover {
             background: nth($col-stack, 3);
         }

@@ -4,7 +4,7 @@ import React from 'react'
 import iconPaths from './selection.js'
 
 // Utils
-import {concatStyles as s} from '../../../utils'
+import {concatStyles as s} from '../../../../utils'
 
 // Styles
 import styles from './Icon.module.scss'

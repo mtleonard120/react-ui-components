@@ -22,15 +22,15 @@ $padding: (10/16) * 1em; // Set padding relative to the font size in the button
 
 // Prop: context
 .primary {
-    @include primary-color-section;
+    @include primary-color-section(true);
 }
 
 .secondary {
-    @include secondary-color-section;
+    @include secondary-color-section(true);
 }
 
 .danger {
-    @include danger-color-section;
+    @include danger-color-section(true);
 }
 
 // Prop: appearance

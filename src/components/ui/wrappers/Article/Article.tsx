@@ -1,10 +1,10 @@
 import React from 'react'
 
 // Components
-import {HR} from '..'
+import {HR} from '../..'
 
 // Utils
-import {concatStyles as s} from '../../../utils'
+import {concatStyles as s} from '../../../../utils'
 
 // Styles
 import styles from './Article.module.scss'
