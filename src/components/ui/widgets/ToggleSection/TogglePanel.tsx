@@ -21,6 +21,7 @@ interface ITogglePanelProps {
     headingContent: JSX.Element | string
     iconClassName?: string
     isOpen?: boolean
+    isLast?: boolean
     onClick?: () => void
 }
 
@@ -45,6 +46,7 @@ interface ITogglePanelProps {
  *  | headingContent    | _JSX.Element_ or _string_ | Content to display in clickable header 	      |
  *  | iconClassName?    | _string_                  | Additional class to apply to icon  	          |
  *  | isOpen?     	    | _boolean_                 | Indicates if toggle section is open 	          |
+ *  | isLast?     	    | _boolean_                 | Indicates if toggle section is last in Accordion|
  *  | onClick?     	    | () => _void_              | Function to call on header click	              |
  *
  *
@@ -66,6 +68,7 @@ export const TogglePanel: React.SFC<ITogglePanelProps> = props => {
         disabled,
         iconClassName,
         isOpen,
+        isLast,
         headingClassName,
         headingContent,
         onClick,
@@ -73,13 +76,22 @@ export const TogglePanel: React.SFC<ITogglePanelProps> = props => {
 
     return (
         <div className={s(styles.container, className)}>
-            <div className={s(styles.heading, disabled && styles.disabled, headingClassName)} onClick={onClick}>
+            <div
+                className={s(
+                    headingClassName,
+                    styles.heading,
+                    disabled && styles.disabled,
+                    isLast && styles.last,
+                    isOpen && styles.open
+                )}
+                onClick={onClick}
+            >
                 <span>{headingContent}</span>
                 {!isOpen &&
                     (customClosedIcon || <Icon iconName='circle-down' size='small' className={iconClassName} />)}
                 {isOpen && (customOpenIcon || <Icon iconName='circle-up' size='small' className={iconClassName} />)}
             </div>
-            {isOpen && <div className={s(styles.content, contentClassName)}>{children}</div>}
+            {isOpen && <div className={s(styles.content, contentClassName, isLast && styles.last)}>{children}</div>}
         </div>
     )
 }

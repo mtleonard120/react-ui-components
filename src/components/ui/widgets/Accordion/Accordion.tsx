@@ -79,11 +79,15 @@ export class Accordion extends React.Component<IAccordionProps, IAccordionState>
         return (
             <div className={s(styles.accordion, className)}>
                 {slots.map((slot: ISlot, i: number) => {
+                    const isLast = i === slots.length - 1
+                    const isOpen = this.state.openIndices.includes(i)
                     return (
                         <TogglePanel
+                            headingClassName={s(styles.panel, isLast && styles.last, isOpen && styles.open)}
                             key={i}
                             headingContent={slot.headerContent}
-                            isOpen={this.state.openIndices.includes(i)}
+                            isOpen={isOpen}
+                            isLast={isLast}
                             onClick={() => this.onSlotOpen(i)}
                         >
                             {slot.bodyContent}

@@ -1,7 +1,7 @@
 import React from 'react'
 
 // Components
-import {Content, Button, TogglePanel, Accordion, Article, Group, HR} from '../../ui'
+import {Content, Button, Accordion, Article, Group, HR, Ipsum} from '../../ui'
 import {Example, Subexample} from '..'
 
 // Helpers
@@ -57,12 +57,8 @@ export const Playground: React.SFC<{}> = () => (
 
             <HR style='light' />
 
-            <Example
-                name='Toggle Panel'
-                description='A header line with a toggleable content container. Component maintains local state
-                    but can be overridden by passing an updated value for the isOpen prop'
-            >
-                <TogglePanel headingContent='Details'>This is some body content</TogglePanel>
+            <Example name='Toggle Panel' description='A header line with a toggleable content container.'>
+                <Accordion slots={[{headerContent: 'Open for Details', bodyContent: <Ipsum />}]} />
             </Example>
 
             <HR style='light' />
