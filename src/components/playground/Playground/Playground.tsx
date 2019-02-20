@@ -11,22 +11,19 @@ const onClick = () => alert('Button pressed!')
 export const Playground: React.SFC<{}> = () => (
     <Content>
         <Article title='UI Component Playground'>
-            <Example name='Button' description='A standard button component with options for role and shape.'>
+            <Example name='Button' description='A standard button component with options for shape, role and fill.'>
                 <Group justify='around'>
-                    <Subexample label='Rounded and Primary'>
-                        <Button role='primary' title='Primary CTA' children='Rounded' onClick={onClick} />
+                    <Subexample label='Rounded, Primary, Fill'>
+                        <Button title='Primary CTA' children='Rounded' onClick={onClick} />
                     </Subexample>
-                    <Subexample label='Square and Secondary'>
-                        <Button
-                            role='secondary'
-                            title='Secondary CTA'
-                            children='Square'
-                            shape='square'
-                            onClick={onClick}
-                        />
+                    <Subexample label='Soft, Secondary, Outline'>
+                        <Button role='secondary' children='Soft' shape='soft' fill='outline' onClick={onClick} />
                     </Subexample>
-                    <Subexample label='Rounded and Danger'>
-                        <Button role='danger' title='Delete Item' children='Delete' shape='rounded' onClick={onClick} />
+                    <Subexample label='Danger, No Fill'>
+                        <Button role='danger' fill='none' title='Delete Item' children='Delete' onClick={onClick} />
+                    </Subexample>
+                    <Subexample label='Square, Danger, Fill'>
+                        <Button role='danger' title='Delete Item' children='Delete' shape='square' onClick={onClick} />
                     </Subexample>
                 </Group>
             </Example>
@@ -40,16 +37,16 @@ export const Playground: React.SFC<{}> = () => (
                 <Group justify='around'>
                     <Subexample label='Row'>
                         <Group justify='start'>
-                            <Button role='primary' title='thing' children='Test' onClick={onClick} />
-                            <Button role='secondary' title='thing1' children='Test1' onClick={onClick} />
-                            <Button role='danger' title='thing2' children='Test2' onClick={onClick} />
+                            <Button title='thing' children='Test' onClick={onClick} />
+                            <Button role='secondary' fill='outline' title='thing1' children='Test1' onClick={onClick} />
+                            <Button role='danger' fill='outline' title='thing2' children='Test2' onClick={onClick} />
                         </Group>
                     </Subexample>
                     <Subexample label='Column'>
                         <Group justify='start' direction='column'>
-                            <Button role='primary' title='thing' children='Test' onClick={onClick} />
-                            <Button role='secondary' title='thing1' children='Test1' onClick={onClick} />
-                            <Button role='danger' title='thing2' children='Test2' onClick={onClick} />
+                            <Button title='thing' children='Test' onClick={onClick} />
+                            <Button role='secondary' fill='outline' title='thing1' children='Test1' onClick={onClick} />
+                            <Button role='danger' fill='outline' title='thing2' children='Test2' onClick={onClick} />
                         </Group>
                     </Subexample>
                 </Group>

@@ -11,7 +11,6 @@ $padding: (10/16) * 1em; // Set padding relative to the font size in the button
 .button {
     @include body;
 
-    border: none;
     padding: $padding 2 * $padding;
     cursor: pointer;
 }
@@ -20,20 +19,47 @@ $padding: (10/16) * 1em; // Set padding relative to the font size in the button
 // Prop Styles
 //***************
 
-// Prop: context
+@mixin fill($color) {
+    &.outline {
+        color: $text-on-body;
+        background: transparent;
+        border-width: 2px;
+
+        &:hover {
+            background: $color;
+            border-color: $color;
+        }
+    }
+
+    &.none {
+        color: $color;
+        background: transparent;
+        border-color: transparent;
+
+        &:hover {
+            color: darken($color, $darken-pct);
+            background: transparent;
+            border-color: transparent;
+        }
+    }
+}
+// Prop: role
 .primary {
     @include primary-color-section(true);
+    @include fill($primary);
 }
 
 .secondary {
     @include secondary-color-section(true);
+    @include fill($secondary);
 }
 
 .danger {
     @include danger-color-section(true);
+    @include fill($danger);
 }
 
-// Prop: appearance
+// Prop: shape
 .rounded {
     border-radius: $padding + 1em;
 }
@@ -42,6 +68,6 @@ $padding: (10/16) * 1em; // Set padding relative to the font size in the button
     border-radius: 0;
 }
 
-.oval {
-    border-radius: 50%;
+.soft {
+    border-radius: 0.25em;
 }

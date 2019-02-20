@@ -42,6 +42,7 @@ $danger-stack: $danger, $text-on-danger, $danger-dark;
 @mixin color-section($col-stack, $hover) {
     background: nth($col-stack, 1);
     color: nth($col-stack, 2);
+    border: 1px solid nth($col-stack, 1);
 
     @if $hover {
         &:hover {

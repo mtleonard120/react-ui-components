@@ -8,13 +8,15 @@ import styles from './Button.module.scss'
 
 // Types
 type ButtonRole = 'primary' | 'secondary' | 'danger'
-type ButtonShape = 'rounded' | 'square' | 'oval'
+type ButtonShape = 'rounded' | 'square' | 'soft'
+type ButtonFill = 'fill' | 'outline' | 'none'
 
 interface IButtonProps {
     children: JSX.Element | string
     className?: string
+    fill?: ButtonFill
     onClick?: () => void
-    role: ButtonRole
+    role?: ButtonRole
     shape?: ButtonShape
     title?: string
 }
@@ -31,6 +33,7 @@ interface IButtonProps {
  *  |------------	|--------------------------------------	|--------------------------------------	|
  *  | children   	| _JSX.Element_ or _string_           	| Text or Element to display in button 	|
  *  | className? 	| _string_                             	| Additional class to apply to button  	|
+ *  | fill?     	| 'fill' or 'outline' or 'none'        	| Fill of the button                  	|
  *  | onClick?   	| () => _void_                         	| Function to execute on button press  	|
  *  | role       	| 'primary' or 'secondary' or 'danger' 	| Role the button plays                	|
  *  | shape?     	| 'rounded' or 'square' or 'oval'   	| Shape of the button                  	|
@@ -43,8 +46,8 @@ interface IButtonProps {
  * ```
  */
 export const Button = (props: IButtonProps) => {
-    const {shape = 'rounded', children, className, role, ...rest} = props
-    const styleList = s(styles[role], styles[shape], styles.button, className)
+    const {shape = 'rounded', fill = 'fill', children, className, role = 'primary', ...rest} = props
+    const styleList = s(styles[fill], styles[role], styles[shape], styles.button, className)
 
     return (
         <button className={styleList} {...rest}>
