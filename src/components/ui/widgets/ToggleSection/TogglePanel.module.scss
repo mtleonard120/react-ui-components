@@ -15,9 +15,13 @@ $halfpad: 0.5 * $padding;
 
 .heading {
     @include primary-color-section(true);
+    @include body;
+
+    width: 100%;
+
     border: 1px solid $border-color;
     border-bottom: none;
-    padding: $halfpad $halfpad $halfpad $padding;
+    padding: $padding $halfpad $padding $padding;
     cursor: pointer;
 
     display: flex;

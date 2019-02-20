@@ -76,7 +76,7 @@ export const TogglePanel: React.SFC<ITogglePanelProps> = props => {
 
     return (
         <div className={s(styles.container, className)}>
-            <div
+            <button
                 className={s(
                     headingClassName,
                     styles.heading,
@@ -87,10 +87,9 @@ export const TogglePanel: React.SFC<ITogglePanelProps> = props => {
                 onClick={onClick}
             >
                 <span>{headingContent}</span>
-                {!isOpen &&
-                    (customClosedIcon || <Icon iconName='circle-down' size='small' className={iconClassName} />)}
-                {isOpen && (customOpenIcon || <Icon iconName='circle-up' size='small' className={iconClassName} />)}
-            </div>
+                {!isOpen && (customClosedIcon || <Icon iconName='circle-down' className={iconClassName} />)}
+                {isOpen && (customOpenIcon || <Icon iconName='circle-up' className={iconClassName} />)}
+            </button>
             {isOpen && <div className={s(styles.content, contentClassName, isLast && styles.last)}>{children}</div>}
         </div>
     )
